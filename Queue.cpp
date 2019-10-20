@@ -9,7 +9,7 @@ using namespace std;
 //first In First Out (like Mcdonalds queue)
 
 //enqueue - add element to arr element with bigger index
-void ArrayQueue::enqueue(string& napis)
+void ArrayQueue::enqueue(int x)
 {
 	if (IsFullCircularArray() == true)							
 	{
@@ -27,27 +27,27 @@ void ArrayQueue::enqueue(string& napis)
 		// rear = ( 9 + 1 ) % 10 = 0; so instead of returning error and wasting space
 		//I set the next element as [0]
 	}
-	arr[rear] = napis;
+	arr[rear] = x;
 	counter++;
 }
 
 //just increment front
-string& ArrayQueue::dequeue()
+int& ArrayQueue::dequeue()
 {
 	if (IsEmpty() == true){			//queue is empty
 		cout << "Empty queue\n";
-		string napis = "ERROR";
+		int napis = 0;
 		return napis;
 	}
 	else if (front == rear)			//queue has only one element
 	{								//so I have to make queue empty.
 		front = rear = -1;
-		string napis = "EMPTY QUEUE";
+		int napis = 0;
 		return napis;
 	}
 	else {
-		string buffer = arr[front];
-		arr[front] = "";
+		int buffer = arr[front];
+	//	arr[front] = nullptr;
 		front = (front + 1) % arr_size;
 		//as above: when my arr_size=10 and I want to dequeue
 		//[9]element then front = ( 9 + 1 ) % 10 = 0;
@@ -84,14 +84,14 @@ bool ArrayQueue::IsEmpty()
 ArrayQueue::ArrayQueue(int rozmiar)
 {
 	arr_size = rozmiar;
-	arr = new string[arr_size];
+//	arr = new string[arr_size];
 	return;
 }
 
 ArrayQueue::ArrayQueue()
 {
 	arr_size = 10;
-	arr = new string[arr_size];
+//	arr = new string[arr_size];
 	return;
 }
 

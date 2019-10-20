@@ -3,6 +3,7 @@
 #include "Element.hpp"
 #include <utility>
 #include <string>
+#define MAX_SIZE 10
 
 using namespace std;
 
@@ -11,17 +12,17 @@ public:
 	ArrayQueue(int);
 	ArrayQueue();
 
-	void enqueue(string&);
-	string& dequeue();
+	void enqueue(int x);
+	int& dequeue();
 	bool IsEmpty();
 
 	bool IsFullCircularArray();
 private:
-	string* arr;
+	int arr[MAX_SIZE];
 	int counter = 0; // no of elements in queue
-	int front = 0;
+	int front = -1;
 	int arr_size = 0;
-	int rear = 0;
+	int rear = -1;
 };
 
 class Queue {
