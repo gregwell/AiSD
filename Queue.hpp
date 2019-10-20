@@ -15,8 +15,8 @@ public:
 	void enqueue(int x);
 	int& dequeue();
 	bool IsEmpty();
-
 	bool IsFullCircularArray();
+
 private:
 	int arr[MAX_SIZE];
 	int counter = 0; // no of elements in queue
