@@ -9,8 +9,8 @@ using namespace std;
 
 class ArrayQueue {
 public:
-	ArrayQueue(int);
-	ArrayQueue();
+	//ArrayQueue(int);
+	//ArrayQueue();
 
 	void enqueue(int x);
 	int& dequeue();
@@ -21,7 +21,7 @@ private:
 	int arr[MAX_SIZE];
 	int counter = 0; // no of elements in queue
 	int front = -1;
-	int arr_size = 0;
+	int arr_size = MAX_SIZE;
 	int rear = -1;
 };
 

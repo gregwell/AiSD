@@ -81,19 +81,19 @@ bool ArrayQueue::IsEmpty()
 }
 
 
-ArrayQueue::ArrayQueue(int rozmiar)
-{
-	arr_size = rozmiar;
-//	arr = new string[arr_size];
-	return;
-}
-
-ArrayQueue::ArrayQueue()
-{
-	arr_size = 10;
-//	arr = new string[arr_size];
-	return;
-}
+//ArrayQueue::ArrayQueue(int rozmiar)
+//{
+//	arr_size = rozmiar;
+////	arr = new string[arr_size];
+//	return;
+//}
+//
+//ArrayQueue::ArrayQueue()
+//{
+//	arr_size = 10;
+////	arr = new string[arr_size];
+//	return;
+//}
 
 
 // POINTER QUEUE
