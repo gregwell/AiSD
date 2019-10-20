@@ -7,20 +7,20 @@ using namespace std;
 
 class Element {
 public:
-	Element(string a) { imie = a; };
-	Element(string a, Element* b) { imie = a; wsk = b; cout << imie << " " << wsk << endl; };
+	Element(string a) { elem = a; };
+	Element(string a, Element* b) { elem = a; wsk = b; cout << elem << " " << wsk << endl; };
 	Element() = default;
-	~Element() { cout << "usuwam " << imie << "\n";  };
+	~Element() { cout << "usuwam " << elem << "\n";  };
 
 	void operator = (Element&&);
 	Element& operator =(Element&);
 	bool operator ==(Element& a);
-public:
+
 	void SetPtr(Element* a) { wsk = a; };
 	Element* GetPtr();
 	string RetVal();
-	void SetVal(string a) { imie = a; };
+	void SetVal(string a) { elem = a; };
 private:
-	string imie;
+	string elem;
 	Element* wsk;
 };

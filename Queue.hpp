@@ -30,7 +30,7 @@ public:
 	Queue();
 
 public:
-	void queue(string&);
+	void enqueue(string&);
 	Element* dequeue();
 	bool IsEmpty();
 private:

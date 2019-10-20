@@ -105,7 +105,7 @@ Queue::Queue()
 	front = nullptr;
 }
 
-void Queue::queue(string& napis)
+void Queue::enqueue(string& napis)
 {
 	if (rear == nullptr)
 	{
