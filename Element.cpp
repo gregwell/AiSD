@@ -6,7 +6,7 @@
 
 Element& Element::operator= (Element& a)
 {
-	imie = a.RetVal();
+	elem = a.RetVal();
 	wsk = a.GetPtr();
 	return a;
 }
@@ -14,7 +14,7 @@ Element& Element::operator= (Element& a)
 
 bool Element::operator==(Element& a)
 {
-	if ((a.RetVal() == imie) && (a.GetPtr() == wsk))
+	if ((a.RetVal() == elem) && (a.GetPtr() == wsk))
 		return true;
 	else
 		return false;
@@ -22,7 +22,7 @@ bool Element::operator==(Element& a)
 
 std::string Element::RetVal()
 {
-	return imie;
+	return elem;
 }
 
 Element* Element::GetPtr()
@@ -32,7 +32,7 @@ Element* Element::GetPtr()
 
 void Element::operator = (Element&& a)
 {
-	imie = std::move(a.RetVal());
+	elem = std::move(a.RetVal());
 	wsk = std::move(a.GetPtr());
 
 }
