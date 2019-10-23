@@ -5,22 +5,27 @@
 
 using namespace std;
 
-class Element {
+class Node {
 public:
-	Element(string a) { elem = a; };
-	Element(string a, Element* b) { elem = a; wsk = b; cout << elem << " " << wsk << endl; };
-	Element() = default;
-	~Element() { cout << "usuwam " << elem << "\n";  };
+	Node(int a) { data = a; }
+	Node(int a, Node* b) { data = a; link = b;};
+	Node() = default;
+	~Node() { cout << "destructor" << data << "\n";  };
 
-	void operator = (Element&&);
-	Element& operator =(Element&);
-	bool operator ==(Element& a);
+	void operator = (Node&&);
+	Node& operator =(Node&);
+	bool operator ==(Node& a);
 
-	void SetPtr(Element* a) { wsk = a; };
-	Element* GetPtr();
-	string RetVal();
-	void SetVal(string a) { elem = a; };
+	void SetPtr(Node* a) { link = a; };
+	Node* GetPointer();
+	int ReturnValue();
+	void SetVal(int a) { data = a; };
+
 private:
-	string elem;
-	Element* wsk;
+	int data;
+	Node* link;
 };
+
+// *cos = value of cos pointer
+// (*temp).data = 2; is equal to: temp -> data =2
+// (*temp).link = NULL; is equal to: temp -> link = NULL

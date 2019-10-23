@@ -8,12 +8,12 @@ using namespace std;
 
 //first In First Out (like Mcdonalds queue)
 
-//enqueue - add element to arr element with bigger index
+//enqueue - add Node to arr Node with bigger index
 void ArrayQueue::enqueue(int x)
 {
 	if (IsFullCircularArray() == true)							
 	{
-		cout << "Full array(circular arr, so no wasting any space), cannot add the element\n";
+		cout << "Full array(circular arr, so no wasting any space), cannot add the Node\n";
 		return;
 	}
 	else if (IsEmpty()==true)
@@ -23,9 +23,9 @@ void ArrayQueue::enqueue(int x)
 	else
 	{
 		rear = (rear + 1) % arr_size; 
-		// e. g. when I have array of elements from [2] to [9] then I have free 0,1 slots
+		// e. g. when I have array of Nodes from [2] to [9] then I have free 0,1 slots
 		// rear = ( 9 + 1 ) % 10 = 0; so instead of returning error and wasting space
-		//I set the next element as [0]
+		//I set the next Node as [0]
 	}
 	arr[rear] = x;
 	counter++;
@@ -36,24 +36,24 @@ int& ArrayQueue::dequeue()
 {
 	if (IsEmpty() == true){			//queue is empty
 		cout << "Empty queue\n";
-		int napis = 0;
-		return napis;
+		int number = 0;
+		return number;
 	}
-	else if (front == rear)			//queue has only one element
+	else if (front == rear)			//queue has only one Node
 	{								//so I have to make queue empty.
 		front = rear = -1;
-		int napis = 0;
-		return napis;
+		int number = 0;
+		return number;
 	}
 	else {
 		int buffer = arr[front];
 	//	arr[front] = nullptr;
 		front = (front + 1) % arr_size;
 		//as above: when my arr_size=10 and I want to dequeue
-		//[9]element then front = ( 9 + 1 ) % 10 = 0;
+		//[9]Node then front = ( 9 + 1 ) % 10 = 0;
 		//so I go to beginning
 		counter--;
-		return buffer; //return dequeued element
+		return buffer; //return dequeued Node
 	}
 }
 //circular array concept
@@ -96,52 +96,55 @@ bool ArrayQueue::IsEmpty()
 //}
 
 
-// POINTER QUEUE
 
-Queue::Queue()
+
+
+//Pointer queue:
+
+PointerQueue::PointerQueue()
 {
 	counter = 0;
 	rear = nullptr;
 	front = nullptr;
 }
 
-void Queue::enqueue(string& napis)
+void PointerQueue::enqueue(int& number)
 {
-	if (rear == nullptr)
+	if (rear == nullptr)		//if rear is null create new node
 	{
-		front = new Element(napis);
+		front = new Node(number); //data = number (1st contructor)
 		rear = front;
 	}
 	else {
-		Element* wsk = new Element(napis, rear);
-		rear = wsk;
+		Node* link = new Node(number, rear);
+		rear = link;
 	}
 	counter++;
 }
 
 
-Element* Queue::dequeue()
+Node* PointerQueue::dequeue()
 {
 	if (counter == 0)
 	{
-		cout << "Blad, kolejka jest juz pusta!\n";
+		cout << "Empty queue, ";
 		return nullptr;
 	}
 
-	Element *wsk;
+	Node *wsk;
 	wsk = rear;
-	while (wsk->GetPtr() != front)
+	while (wsk->GetPointer() != front)
 	{
-		wsk = wsk->GetPtr();
+		wsk = wsk->GetPointer();
 	}
-	Element*bufor = front;
+	Node*bufor = front;
 	front = wsk;
 	front->SetPtr(nullptr);
 	counter--;
 	return wsk;
 }
 
-bool Queue::IsEmpty()
+bool PointerQueue::IsEmpty()
 {
 	bool a;
 	counter == 0 ? a = true : a = false;

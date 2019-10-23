@@ -23,16 +23,16 @@ private:
 };
 
 
-//////////////////////// STOS WSKAèNIKOWY
+//////////////////////// STOS WSKAzèNIKOWY
 class Stack {
 public:
 	Stack();
 
 	void push(std::string&);
-	Element* pop();
+	Node* pop();
 	bool IsEmpty();
 private:
-	Element * top;
+	Node * top;
 	int licznik = 0;
 };
 

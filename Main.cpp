@@ -3,6 +3,7 @@
 #include <vector>
 #include "Lista.hpp"
 #include "Queue.hpp"
+#include "Stack.hpp"
 
 using namespace std;
 

@@ -2,38 +2,41 @@
 #include <utility>
 #include "Element.hpp"
 
+using namespace std;
 
-
-Element& Element::operator= (Element& a)
+//move contructor
+void Node::operator = (Node&& a)
 {
-	elem = a.RetVal();
-	wsk = a.GetPtr();
+	data = move(a.ReturnValue());
+	link = move(a.GetPointer());
+}
+//copy its internal pointer to data 
+//instead of copying all data
+
+Node& Node::operator= (Node& a)
+{
+	data = a.ReturnValue();
+	link = a.GetPointer();
 	return a;
 }
 
-
-bool Element::operator==(Element& a)
+bool Node::operator==(Node& a)
 {
-	if ((a.RetVal() == elem) && (a.GetPtr() == wsk))
+	if ((a.ReturnValue() == data) && (a.GetPointer() == link))
 		return true;
 	else
 		return false;
 }
 
-std::string Element::RetVal()
+int Node::ReturnValue()
 {
-	return elem;
+	return data;
 }
 
-Element* Element::GetPtr()
+Node* Node::GetPointer()
 {
-	return wsk;
+	return link;
 }
 
-void Element::operator = (Element&& a)
-{
-	elem = std::move(a.RetVal());
-	wsk = std::move(a.GetPtr());
 
-}
 

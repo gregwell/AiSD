@@ -19,22 +19,36 @@ public:
 
 private:
 	int arr[MAX_SIZE];
-	int counter = 0; // no of elements in queue
+	int counter = 0; // no of elemeents in queue
 	int front = -1;
 	int arr_size = MAX_SIZE;
 	int rear = -1;
 };
 
-class Queue {
-public:
-	Queue();
+//adress of the head node
+// so head - might be a pointer to the head node
 
+//both operations in constant time
+
+// we need to change the adress of the last node
+//so we need pointer to the actual last node (temp)
+//but in linked lists we only keep with the adress of the head node
+
+//so initially set temp to HEAD 
+//temp = temp ->next
+//so we will go through all nodes from head to rear node
+//  
+
+
+class PointerQueue {
 public:
-	void enqueue(string&);
-	Element* dequeue();
+	PointerQueue();	//constructor
+public:
+	void enqueue(int&);
+	Node* dequeue();
 	bool IsEmpty();
 private:
-	Element * front;
-	Element* rear;
+	Node * front;
+	Node* rear;
 	int counter = 0;
 };
