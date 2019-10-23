@@ -21,6 +21,11 @@ int main()
 	PointerQueue my;
 	my.enqueue(4);
 
+	ArrStack myarraystack;
+	myarraystack.Push(7);
+	myarraystack.Push(3); 
+	myarraystack.Push(1); 
+	myarraystack.Pop(); 
 
 	system("PAUSE");
 	return 0;

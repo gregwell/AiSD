@@ -7,30 +7,25 @@
 
 using namespace std;
 
-class ArrayStack
+class ArrStack
 {
+private:
+	int A[MAX_SIZE]; 
+	int top;   
+	int counter;
 public:
-	ArrayStack();
-	ArrayStack(int);
-
-	void push(int&);
-	int& pop();
+	ArrStack();
+	void Push(int x);
+	void Pop();
 	bool IsEmpty();
 	bool IsFull();
-private:
-	int top;
-	int MaxSize;
-	int counter;
-
-	int tab[MAX_SIZE];
 };
 
 
-//////////////////////// STOS WSKAzèNIKOWY
-class Stack {
-public:
-	Stack();
 
+class PointerStack {
+public:
+	PointerStack();
 	void push(int&);
 	Node* pop();
 	bool IsEmpty();

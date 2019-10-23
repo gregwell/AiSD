@@ -8,100 +8,78 @@ using namespace std;
 
 //insertion and deletion only from the top of stack
 
-void ArrayStack::push(int& number)
+ArrStack::ArrStack()
 {
-	if (counter == MaxSize)
-	{
-		cout << "stack is full";
+	top = -1; //empty stack (constructor)
+}
+
+void ArrStack::Push(int x)
+{
+	if (IsFull()) { 
+		cout << " error, stack overflow" << endl;
 		return;
 	}
-	else {
-		top++;
-		tab[top] = number;
-		counter++;
-	}
+	A[++top] = x;
 }
 
-
-int& ArrayStack::pop()
+void ArrStack::Pop()
 {
-	if (this->IsEmpty())
-	{
-		cout << "empty stack";
-		int number = 0;
-		return number;
+	if (IsEmpty()) { 
+		cout << "error, stack empty" << endl;
+		return;
 	}
-	else {
-		int number = tab[top];
-		tab[top] = NULL;
-		top--;
-		counter--;
-		return number;
-	}
+	top--;
 }
 
-
-
-bool ArrayStack::IsEmpty()
+bool ArrStack::IsEmpty()
 {
 	bool a;
-	counter == 0 ? a = true : a = false;
+	top == -1 ? a = true : a = false;
 	return a;
 }
 
-bool ArrayStack::IsFull()
+bool ArrStack::IsFull()
 {
 	bool a;
-	counter == MaxSize ? a = true : a = false;
+	top == MAX_SIZE -1 ? a = true : a = false;
 	return a;
 }
 
-//constructor when we fill the size manually
-ArrayStack::ArrayStack(int rozmiar)
-{
-	MaxSize = rozmiar;
-	tab = new int[MaxSize];
-	top = 0;
+//Pointer STACK
+
+PointerStack::PointerStack() {
 	counter = 0;
+	top = nullptr;
 }
 
-//default constructor
-ArrayStack::ArrayStack()
+void PointerStack::push(int& number)
 {
-	MaxSize = 100;
-	tab = new int[MaxSize];
-	top = 0;
-	counter = 0;
+	top = new Node(number, top);
+	//data = number; link = top;
+	counter++;
 }
 
-///////////////////////////////////////// STOS WSKANIKOWY ////////////////////////////////
-Node* Stack::pop(){
+Node* PointerStack::pop(){
+
 	if (counter == 0)
 	{
-		cout << "stos jest pusty, nie mozna sciagnac Nodeu\n";
+		cout << "empty stack";
 		return nullptr;
 	}
-	Node* wsk = top;
-	top = top->GetPointer();
+
+	Node* temp = top; //temporarly store Node info of current top
+	top = top->GetPointer();  //current top get the link
 	counter--;
-	return wsk;
+	return temp;
 }
 
-void Stack::push(int& number)
-{
-		top = new Node(number,top);
-		counter++;
-}
 
-bool Stack::IsEmpty()
+bool PointerStack::IsEmpty()
 {
 	bool a;
 	counter == 0 ? a = true : a = false;
-	return a;
+	return a; 
 }
 
-Stack::Stack(){
-counter = 0;
-top = nullptr;
-}
+
 
