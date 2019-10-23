@@ -108,7 +108,7 @@ PointerQueue::PointerQueue()
 	front = nullptr;
 }
 
-void PointerQueue::enqueue(int& number)
+void PointerQueue::enqueue(int number)
 {
 	//queue is empty
 	if (rear == nullptr)		//if rear is null create new node
@@ -146,25 +146,6 @@ void PointerQueue::enqueue(int& number)
 
 void PointerQueue::dequeue()
 {
-	//if (counter == 0)
-	//{
-	//	cout << "Empty queue, ";
-	//	return nullptr;
-	//}
-
-	//Node *h;
-	//h = rear;
-
-	//while (h->GetPointer() != front)
-	//{
-	//	h = h->GetPointer();
-	//}
-	//Node* temp = front;
-	//front = h;
-	//front->SetPtr(nullptr);
-	//counter--;
-	//return h;
-
 	Node* temp = front;
 
 	//case: empty queue
@@ -173,12 +154,19 @@ void PointerQueue::dequeue()
 	//case: only one element in queue
 	if (front == rear) {
 		front = rear = nullptr;
+		return;
 	}
 	else {
-		front = front->GetPointer();
+		front = front->GetPointer(); 
+		front = (*front).GetPointer();
+		//return *front; JAK??
 	}
 	free(temp); //getting rid of useless memory
 }
+
+//it should return dequeued int
+//jednak dziala jak jest na voidzie ale wtedy nie wyswietle
+//se co zdjolem z kolejki
 
 bool PointerQueue::IsEmpty()
 {

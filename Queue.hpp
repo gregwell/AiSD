@@ -44,8 +44,8 @@ class PointerQueue {
 public:
 	PointerQueue();	//constructor
 public:
-	void enqueue(int&);
-	void dequeue(); //Node* 
+	void enqueue(int);
+	void dequeue();
 	bool IsEmpty();
 private:
 	Node * front;

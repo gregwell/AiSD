@@ -12,14 +12,14 @@ public:
 	Node() = default;
 	~Node() { cout << "destructor" << data << "\n";  };
 
-	void operator = (Node&&);
-	Node& operator =(Node&);
-	bool operator ==(Node& a);
+//	void operator = (Node&&);
+//Node& operator =(Node&);
+//	bool operator ==(Node& a);
 
-	void SetPtr(Node* a) { link = a; };
+	void SetPointer(Node* a) { link = a; };
 	Node* GetPointer();
 	int ReturnValue();
-	void SetVal(int a) { data = a; };
+	void SetValue(int a) { data = a; };
 
 private:
 	int data;
