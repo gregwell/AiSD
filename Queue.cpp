@@ -116,14 +116,15 @@ void PointerQueue::enqueue(int& number)
 		//so we fill front and rear value part with enetered value
 		front = new Node(number); //data = number (1st contructor)
 		rear = front;
-		//the address part should be filled automatically (?)
-		//probably by Node() = default; contructor but i have to ask michal
+		//the address part will be stil null
 	}
 	else {
 		Node* link = new Node(number, rear); 
 		//FIRST: 
 		//in the newly created Node:
 		//data = [entered number]; link = [current rear address part]
+		//so for second iteration link will be 0
+		//but the old rear will point to the new Node
 
 
 		rear = link; 
@@ -133,26 +134,50 @@ void PointerQueue::enqueue(int& number)
 	counter++;
 }
 
+//the main idea: 
+//rear have the address of the last Node
+//but the one before last Node also have address to the last Node
+//the last Node have address 0
 
-Node* PointerQueue::dequeue()
+//in the same way:
+//front have the address to first Node
+//but first Node have address to second node.
+
+
+void PointerQueue::dequeue()
 {
-	if (counter == 0)
-	{
-		cout << "Empty queue, ";
-		return nullptr;
-	}
+	//if (counter == 0)
+	//{
+	//	cout << "Empty queue, ";
+	//	return nullptr;
+	//}
 
-	Node *wsk;
-	wsk = rear;
-	while (wsk->GetPointer() != front)
-	{
-		wsk = wsk->GetPointer();
+	//Node *h;
+	//h = rear;
+
+	//while (h->GetPointer() != front)
+	//{
+	//	h = h->GetPointer();
+	//}
+	//Node* temp = front;
+	//front = h;
+	//front->SetPtr(nullptr);
+	//counter--;
+	//return h;
+
+	Node* temp = front;
+
+	//case: empty queue
+	if (front == nullptr) return;
+
+	//case: only one element in queue
+	if (front == rear) {
+		front = rear = nullptr;
 	}
-	Node*bufor = front;
-	front = wsk;
-	front->SetPtr(nullptr);
-	counter--;
-	return wsk;
+	else {
+		front = front->GetPointer();
+	}
+	free(temp); //getting rid of useless memory
 }
 
 bool PointerQueue::IsEmpty()

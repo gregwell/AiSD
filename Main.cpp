@@ -17,6 +17,12 @@ int main()
 	myarray.enqueue(7);
 	cout << myarray.dequeue() << endl;
 	cout << myarray.dequeue() << endl;
+
+	PointerQueue parray;
+	parray.enqueue(3);
+
+
+
 	//string a[10];	
 	//string filename = "dane.txt";	
 	//LoadFromFile<string>(a, filename);	
