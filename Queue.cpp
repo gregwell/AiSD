@@ -110,14 +110,25 @@ PointerQueue::PointerQueue()
 
 void PointerQueue::enqueue(int& number)
 {
+	//queue is empty
 	if (rear == nullptr)		//if rear is null create new node
 	{
+		//so we fill front and rear value part with enetered value
 		front = new Node(number); //data = number (1st contructor)
 		rear = front;
+		//the address part should be filled automatically (?)
+		//probably by Node() = default; contructor but i have to ask michal
 	}
 	else {
-		Node* link = new Node(number, rear);
-		rear = link;
+		Node* link = new Node(number, rear); 
+		//FIRST: 
+		//in the newly created Node:
+		//data = [entered number]; link = [current rear address part]
+
+
+		rear = link; 
+		//SECOND: modify the address of the rear
+		//		  to make it point to the newly created Node
 	}
 	counter++;
 }
