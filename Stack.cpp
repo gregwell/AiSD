@@ -4,96 +4,104 @@
 #include "Element.hpp"
 #include "Stack.hpp"
 
+using namespace std;
 
-//std::string& TabStack::pop()
-//{
-//	if (this->IsEmpty())
-//	{
-//		std::cout << "Stos jest juz pusty, nie mozna sciagnac, zwracam ERROR\n";
-//		std::string napis = "ERROR";
-//		return napis;
-//	}
-//	else {
-//		std::string napis = tab[top];
-//		tab[top] = "";
-//		top--;
-//		licznik--;
-//		return napis;
-//	}
-//}
-//
-//void TabStack::push(std::string& napis)
-//{
-//	if (licznik == MaxSize)
-//	{
-//		std::cout << "Stos tablicowy jest pelny, blad\n";
-//		return;
-//	}
-//	else {
-//		top++;
-//		tab[top] = napis;
-//		licznik++;
-//	}
-//}
-//
-//bool TabStack::IsEmpty()
-//{
-//	bool a;
-//	licznik == 0 ? a = true : a = false;
-//	return a;
-//}
-//
-//bool TabStack::IsFull()
-//{
-//	bool a;
-//	licznik == MaxSize ? a = true : a = false;
-//	return a;
-//}
-//
-//TabStack::TabStack(int rozmiar)
-//{
-//	MaxSize = rozmiar;
-//	tab = new std::string[MaxSize];
-//	top = 0;
-//	licznik = 0;
-//}
-//
-//TabStack::TabStack()
-//{
-//	MaxSize = 100;
-//	tab = new std::string[MaxSize];
-//	top = 0;
-//	licznik = 0;
-//}
-//
-/////////////////////////////////////////// STOS WSKANIKOWY ////////////////////////////////
-//Node* Stack::pop(){
-//	if (licznik == 0)
-//	{
-//		std::cout << "stos jest pusty, nie mozna sciagnac Nodeu\n";
-//		return nullptr;
-//	}
-//	Node* wsk = top;
-//	top = top->GetPointer();
-//	licznik--;
-//	return wsk;
-//}
-//
-//void Stack::push(std::string& napis)
-//{
-//		top = new Node(napis,top);
-//		licznik++;
-//}
-//
-//bool Stack::IsEmpty()
-//{
-//	bool a;
-//	licznik == 0 ? a = true : a = false;
-//	return a;
-//}
-//
-//Stack::Stack(){
-//licznik = 0;
-//top = nullptr;
-//}
+//insertion and deletion only from the top of stack
+
+void ArrayStack::push(int& number)
+{
+	if (counter == MaxSize)
+	{
+		cout << "stack is full";
+		return;
+	}
+	else {
+		top++;
+		tab[top] = number;
+		counter++;
+	}
+}
+
+
+int& ArrayStack::pop()
+{
+	if (this->IsEmpty())
+	{
+		cout << "empty stack";
+		int number = 0;
+		return number;
+	}
+	else {
+		int number = tab[top];
+		tab[top] = NULL;
+		top--;
+		counter--;
+		return number;
+	}
+}
+
+
+
+bool ArrayStack::IsEmpty()
+{
+	bool a;
+	counter == 0 ? a = true : a = false;
+	return a;
+}
+
+bool ArrayStack::IsFull()
+{
+	bool a;
+	counter == MaxSize ? a = true : a = false;
+	return a;
+}
+
+//constructor when we fill the size manually
+ArrayStack::ArrayStack(int rozmiar)
+{
+	MaxSize = rozmiar;
+	tab = new int[MaxSize];
+	top = 0;
+	counter = 0;
+}
+
+//default constructor
+ArrayStack::ArrayStack()
+{
+	MaxSize = 100;
+	tab = new int[MaxSize];
+	top = 0;
+	counter = 0;
+}
+
+///////////////////////////////////////// STOS WSKANIKOWY ////////////////////////////////
+Node* Stack::pop(){
+	if (counter == 0)
+	{
+		cout << "stos jest pusty, nie mozna sciagnac Nodeu\n";
+		return nullptr;
+	}
+	Node* wsk = top;
+	top = top->GetPointer();
+	counter--;
+	return wsk;
+}
+
+void Stack::push(int& number)
+{
+		top = new Node(number,top);
+		counter++;
+}
+
+bool Stack::IsEmpty()
+{
+	bool a;
+	counter == 0 ? a = true : a = false;
+	return a;
+}
+
+Stack::Stack(){
+counter = 0;
+top = nullptr;
+}
 
