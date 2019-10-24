@@ -16,7 +16,7 @@ private:
 public:
 	ArrStack();
 	void Push(int x);
-	void Pop();
+	int Pop();
 	bool IsEmpty();
 	bool IsFull();
 };
@@ -27,7 +27,7 @@ class PointerStack {
 public:
 	PointerStack();
 	void push(int);
-	Node* pop();
+	int pop();
 	bool IsEmpty();
 private:
 	Node * top;

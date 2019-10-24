@@ -22,13 +22,14 @@ void ArrStack::Push(int x)
 	A[++top] = x;
 }
 
-void ArrStack::Pop()
+int ArrStack::Pop()
 {
 	if (IsEmpty()) { 
 		cout << "error, stack empty" << endl;
-		return;
+		return NULL;
 	}
-	top--;
+	//top--;
+	return A[top--];
 }
 
 bool ArrStack::IsEmpty()
@@ -57,10 +58,11 @@ void PointerStack::push(int number)
 	//data = number; link = top;
 }
 
-Node* PointerStack::pop(){
+int PointerStack::pop(){
 
 	if (IsEmpty()) {
-		return nullptr;
+		cout << "Error, empty stack" << endl;
+		return NULL;
 	}
 
 	Node* temp = top; //temporarly store Node info of current top
@@ -71,12 +73,11 @@ Node* PointerStack::pop(){
 	//  1st Node: [2/0] with address 100
 	//	2nd Node: [5/100] with address 250
 	//		top: 100
-	//so I look for link section in Node that top points to
+	//so I look for link section in Node that top points to (first node)
 	//in this case: 
-	//top points to [2/0] and I get the link: 0
+	//top have the address to [2/0] Node and I get the link: 0
 
-	free(temp);
-	return temp;
+	return temp->ReturnValue();
 }
 
 bool PointerStack::IsEmpty()

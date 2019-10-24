@@ -45,7 +45,7 @@ public:
 	PointerQueue();	//constructor
 public:
 	void enqueue(int);
-	void dequeue();
+	int dequeue();
 	bool IsEmpty();
 private:
 	Node * front;

@@ -144,17 +144,19 @@ void PointerQueue::enqueue(int number)
 //	-first Node have address to second node.
 
 
-void PointerQueue::dequeue()
+int PointerQueue::dequeue()
 {
 	Node* temp = front;
 
 	//case: empty queue
-	if (front == nullptr) return;
+	if (front == nullptr) {
+		cout << "Error, empty queue" << endl;
+		return NULL;
+	}
 
 	//case: only one element in queue
 	if (front == rear) {
 		front = rear = nullptr;
-		return;
 	}
 	else {
 		front = front->GetPointer(); 
@@ -165,7 +167,7 @@ void PointerQueue::dequeue()
 		//so:	   Now: front=200 
 		//e.g. 2nd Node: [8/300] with address 200
 	}
-	free(temp); //getting rid of useless memory
+	return temp->ReturnValue();
 }
 
 //it should return dequeued int
