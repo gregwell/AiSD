@@ -12,20 +12,16 @@ public:
 	Node() = default;
 	~Node() { cout << "destructor" << data << "\n";  };
 
-	//void operator = (Node&&);
-	//Node& operator =(Node&);
-	//bool operator ==(Node& a);
-
-	void SetPointer(Node* a) { link = a; };
+	void SetPointer(Node* a);
 	Node* GetPointer();
 	int ReturnValue();
-	void SetValue(int a) { data = a; };
+	void SetValue(int a);
 
 private:
 	int data;
 	Node* link;
 };
 
-// *cos = value of cos pointer
-// (*temp).data = 2; is equal to: temp -> data =2
-// (*temp).link = NULL; is equal to: temp -> link = NULL
+// *cos = value of pointer
+// (*temp).data     <==>    temp -> data 
+// (*temp).link     <==>    temp -> link 

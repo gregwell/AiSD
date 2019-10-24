@@ -4,37 +4,22 @@
 
 using namespace std;
 
-
-//void Node::operator = (Node&& a)
-//{
-//	data = move(a.ReturnValue());
-//	link = move(a.GetPointer());
-//}
-//
-//Node& Node::operator= (Node& a)
-//{
-//	data = a.ReturnValue();
-//	link = a.GetPointer();
-//	return a;
-//}
-//
-//bool Node::operator==(Node& a)
-//{
-//	if ((a.ReturnValue() == data) && (a.GetPointer() == link))
-//		return true;
-//	else
-//		return false;
-//}
-
-int Node::ReturnValue()
+void Node::SetPointer(Node* a)
 {
-	return data;
-}
+	link = a;
+};
 
 Node* Node::GetPointer()
 {
 	return link;
 }
 
+int Node::ReturnValue()
+{
+	return data;
+}
 
-
+void Node::SetValue(int a) 
+{ 
+	data = a; 
+};

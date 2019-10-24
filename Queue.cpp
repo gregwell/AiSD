@@ -134,14 +134,14 @@ void PointerQueue::enqueue(int number)
 	counter++;
 }
 
-//the main idea: 
-//rear have the address of the last Node
-//but the one before last Node also have address to the last Node
+//Main ideas:
+//-	rear have the address of the last Node
+//-	the one before last Node also have address to the last Node
 //the last Node have address 0
 
 //in the same way:
-//front have the address to first Node
-//but first Node have address to second node.
+//	-front have the address to first Node
+//	-first Node have address to second node.
 
 
 void PointerQueue::dequeue()
@@ -158,8 +158,12 @@ void PointerQueue::dequeue()
 	}
 	else {
 		front = front->GetPointer(); 
-		front = (*front).GetPointer();
-		//return *front; JAK??
+		//make front point to the next Node
+		//EXAMPLE: front: 100
+		//		   1st Node: [2/200] with address 100
+		//then:	   I ask to GetPointer() (get the link) from 1stNode
+		//so:	   Now: front=200 
+		//e.g. 2nd Node: [8/300] with address 200
 	}
 	free(temp); //getting rid of useless memory
 }
