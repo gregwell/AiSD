@@ -45,39 +45,44 @@ bool ArrStack::IsFull()
 	return a;
 }
 
-//Pointer STACK
+//Pointer stack
 
 PointerStack::PointerStack() {
-	counter = 0;
 	top = nullptr;
 }
 
-void PointerStack::push(int& number)
+void PointerStack::push(int number)
 {
 	top = new Node(number, top);
 	//data = number; link = top;
-	counter++;
 }
 
 Node* PointerStack::pop(){
 
-	if (counter == 0)
-	{
-		cout << "empty stack";
+	if (IsEmpty()) {
 		return nullptr;
 	}
 
 	Node* temp = top; //temporarly store Node info of current top
-	top = top->GetPointer();  //current top get the link
-	counter--;
+	top = top->GetPointer();  //make top point to the previous Node
+	//return link stored in Node that top points to
+
+	//example:
+	//  1st Node: [2/0] with address 100
+	//	2nd Node: [5/100] with address 250
+	//		top: 100
+	//so I look for link section in Node that top points to
+	//in this case: 
+	//top points to [2/0] and I get the link: 0
+
+	free(temp);
 	return temp;
 }
-
 
 bool PointerStack::IsEmpty()
 {
 	bool a;
-	counter == 0 ? a = true : a = false;
+	top==nullptr ? a = true : a = false;
 	return a; 
 }
 

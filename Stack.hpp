@@ -26,11 +26,10 @@ public:
 class PointerStack {
 public:
 	PointerStack();
-	void push(int&);
+	void push(int);
 	Node* pop();
 	bool IsEmpty();
 private:
 	Node * top;
-	int counter = 0;
 };
 

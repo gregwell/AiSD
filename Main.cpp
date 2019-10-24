@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Odczyt.hpp"
 #include <vector>
-#include "Lista.hpp"
+#include "List.hpp"
 #include "Queue.hpp"
 #include "Stack.hpp"
 
@@ -26,6 +26,12 @@ int main()
 	myarraystack.Push(3); 
 	myarraystack.Push(1); 
 	myarraystack.Pop(); 
+
+	PointerStack mypointerstack;
+	mypointerstack.push(3);
+	mypointerstack.push(4);
+	mypointerstack.pop();
+
 
 	system("PAUSE");
 	return 0;
