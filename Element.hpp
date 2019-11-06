@@ -11,6 +11,7 @@ public:
 	Node(int a, Node* b) { data = a; link = b;};
 	Node() = default;
 	~Node() { cout << "destructor" << data << "\n";  };
+	//destructor should clean the memory
 
 	void SetPointer(Node* a);
 	Node* GetPointer();

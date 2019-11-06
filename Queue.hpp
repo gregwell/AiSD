@@ -52,3 +52,16 @@ private:
 	Node* rear;
 	int counter = 0;
 };
+
+class DLLqueue {
+public:
+	DLLqueue();	//constructor
+public:
+	void enqueue(int);
+	int dequeue();
+	bool IsEmpty();
+private:
+	Node * front;
+	Node* rear;
+	int counter = 0;
+};

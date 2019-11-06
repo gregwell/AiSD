@@ -76,8 +76,10 @@ int PointerStack::pop(){
 	//so I look for link section in Node that top points to (first node)
 	//in this case: 
 	//top have the address to [2/0] Node and I get the link: 0
-
+	
 	return temp->ReturnValue();
+
+	// i have to to delete the returned value
 }
 
 bool PointerStack::IsEmpty()

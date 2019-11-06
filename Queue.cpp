@@ -6,6 +6,8 @@
 
 using namespace std;
 
+//constructor to -1,-1
+
 //first In First Out (like Mcdonalds queue)
 
 //enqueue - add Node to arr Node with bigger index
@@ -37,7 +39,7 @@ int& ArrayQueue::dequeue()
 	if (IsEmpty() == true){			//queue is empty
 		cout << "Empty queue\n";
 		int number = 0;
-		return number;
+		return number; 
 	}
 	else if (front == rear)			//queue has only one Node
 	{								//so I have to make queue empty.
@@ -175,6 +177,89 @@ int PointerQueue::dequeue()
 //se co zdjolem z kolejki
 
 bool PointerQueue::IsEmpty()
+{
+	bool a;
+	counter == 0 ? a = true : a = false;
+	return a;
+}
+
+
+//DLL QUEUE
+
+DLLqueue::DLLqueue()
+{
+	counter = 0;
+	rear = nullptr;
+	front = nullptr;
+}
+
+void DLLqueue::enqueue(int number)
+{
+	//queue is empty
+	if (rear == nullptr)		//if rear is null create new node
+	{
+		//so we fill front and rear value part with enetered value
+		front = new Node(number); //data = number (1st contructor)
+		rear = front;
+		//the address part will be stil null
+	}
+	else {
+		Node* link = new Node(number, rear);
+		//FIRST: 
+		//in the newly created Node:
+		//data = [entered number]; link = [current rear address part]
+		//so for second iteration link will be 0
+		//but the old rear will point to the new Node
+
+
+		rear = link;
+		//SECOND: modify the address of the rear
+		//		  to make it point to the newly created Node
+	}
+	counter++;
+}
+
+//Main ideas:
+//-	rear have the address of the last Node
+//-	the one before last Node also have address to the last Node
+//the last Node have address 0
+
+//in the same way:
+//	-front have the address to first Node
+//	-first Node have address to second node.
+
+
+int DLLqueue::dequeue()
+{
+	Node* temp = front;
+
+	//case: empty queue
+	if (front == nullptr) {
+		cout << "Error, empty queue" << endl;
+		return NULL;
+	}
+
+	//case: only one element in queue
+	if (front == rear) {
+		front = rear = nullptr;
+	}
+	else {
+		front = front->GetPointer();
+		//make front point to the next Node
+		//EXAMPLE: front: 100
+		//		   1st Node: [2/200] with address 100
+		//then:	   I ask to GetPointer() (get the link) from 1stNode
+		//so:	   Now: front=200 
+		//e.g. 2nd Node: [8/300] with address 200
+	}
+	return temp->ReturnValue();
+}
+
+//it should return dequeued int
+//jednak dziala jak jest na voidzie ale wtedy nie wyswietle
+//se co zdjolem z kolejki
+
+bool DLLqueue::IsEmpty()
 {
 	bool a;
 	counter == 0 ? a = true : a = false;
