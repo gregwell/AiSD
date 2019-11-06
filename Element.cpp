@@ -14,6 +14,16 @@ Node* Node::GetPointer()
 	return link;
 }
 
+Node* Node::GetPrev()
+{
+	return prev;
+}
+
+void Node::SetPrev(Node* a)
+{
+	prev = a;
+};
+
 int Node::ReturnValue()
 {
 	return data;
