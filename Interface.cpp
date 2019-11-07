@@ -9,10 +9,10 @@ using namespace std;
 
 void Lab3Ex3() 
 {
-	ArrayQueue kolejka(500);
-	ArrStack stos(300);
-	ArrStack stosBuforowy(300);	//stos pomocniczy
-	List zgodne; // matches the condition
+	ArrayQueue kolejka(500);  // "Dana jest kolejka Q"
+	ArrStack stos(300); //" .. i stos S"
+	ArrStack stosPomocniczy(300);	//stos pomocniczy
+	List lista; // lista zgodnych"
 
 	//inicjalizacja kolejki i stosu
 	int tablica[500];
@@ -26,36 +26,36 @@ void Lab3Ex3()
 
 	int cond = 13;	//zmienna do trzymania warunku
 	bool CzyKolejka = 0; //flaga informuje czy aktualnie przeszukuje kolejke
-	int rozmiar = kolejka.ReturnSize(); //rozmiar kolejki
+	int kolejkaSize = kolejka.ReturnSize(); //rozmiar kolejki
 
 	//petla przerywa sie gdy skonczy sie jeden ze zbiorow
-	while ((!stos.IsEmpty()) || (counter != rozmiar))  
+	while ((!stos.IsEmpty()) || (counter != kolejkaSize))  
 	{
 		switch (CzyKolejka)
 		{
 		case 0:
 		{
-			while ((true) || (!stos.IsEmpty()))
+			if (!stos.IsEmpty())
 			{
 				int bufor = stos.Pop();
 				if (bufor == cond)	
 				{
-					zgodne.Insert(bufor);
+					lista.Insert(bufor);
 					break;
 				}
 				else {
-					stosBuforowy.Push(bufor);
+					stosPomocniczy.Push(bufor);
 				}
 			}
 			CzyKolejka = 1;
 		}break;
 		case 1: {
-			while ((true) || (counter != rozmiar))
+			if ((counter != kolejkaSize))
 			{
 				int bufor = kolejka.dequeue();
 				if (bufor == cond)
 				{
-					zgodne.Insert(bufor);
+					lista.Insert(bufor);
 					break;
 				}
 				else {
@@ -68,6 +68,6 @@ void Lab3Ex3()
 		}
 	}
 
-	while (!stosBuforowy.IsEmpty())
-		stos.Push(stosBuforowy.Pop());
+	while (!stosPomocniczy.IsEmpty())
+	stos.Push(stosPomocniczy.Pop());
 }
