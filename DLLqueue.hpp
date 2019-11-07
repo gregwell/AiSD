@@ -13,7 +13,8 @@ public:
 public:
 	void insertRear(int);
 	void insertFront(int);
-	int dequeue();
+	int dequeueFront();
+	int dequeueRear();
 	bool IsEmpty();
 private:
 	Node* front;

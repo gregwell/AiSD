@@ -10,7 +10,16 @@ using namespace std;
 
 ArrStack::ArrStack()
 {
+	int MaxSize = 100;
 	top = -1; //empty stack (constructor)
+	A = new int[MaxSize];
+}
+
+ArrStack::ArrStack(int x)
+{
+	int MaxSize = x;
+	top = -1; //empty stack (constructor)
+	A = new int[MaxSize];
 }
 
 void ArrStack::Push(int x)

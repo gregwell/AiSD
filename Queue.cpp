@@ -10,6 +10,18 @@ using namespace std;
 
 //first In First Out (like Mcdonalds queue)
 
+ArrayQueue::ArrayQueue() {
+	MaxSize = 100;
+	arr = new int[MaxSize];
+	return;
+}
+
+ArrayQueue::ArrayQueue(int x) {
+	MaxSize = x;
+	arr = new int[MaxSize];
+	return;
+}
+
 //enqueue - add Node to arr Node with bigger index
 void ArrayQueue::enqueue(int x)
 {
@@ -80,6 +92,10 @@ bool ArrayQueue::IsEmpty()
 	bool a;
 	counter == 0 ? a = true : a = false;
 	return a;
+}
+
+int ArrayQueue::ReturnSize(){
+	return counter;
 }
 
 

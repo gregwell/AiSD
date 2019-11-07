@@ -10,11 +10,12 @@ using namespace std;
 class ArrStack
 {
 private:
-	int A[MAX_SIZE]; 
+	int* A;
 	int top;   
 	int counter;
 public:
 	ArrStack();
+	ArrStack(int x);
 	void Push(int x);
 	int Pop();
 	bool IsEmpty();

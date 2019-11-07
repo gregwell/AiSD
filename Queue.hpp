@@ -9,21 +9,25 @@ using namespace std;
 
 class ArrayQueue {
 public:
-	//ArrayQueue(int);
-	//ArrayQueue();
+	ArrayQueue(int);
+	ArrayQueue();
 
 	void enqueue(int x);
 	int& dequeue();
 	bool IsEmpty();
 	bool IsFullCircularArray();
+	int ReturnSize();
 
 private:
-	int arr[MAX_SIZE];
+	int MaxSize;
+	int* arr;
 	int counter = 0; // no of elemeents in queue
 	int front = -1;
-	int arr_size = MAX_SIZE;
+	int arr_size = MaxSize;
 	int rear = -1;
 };
+
+
 
 //adress of the head node
 // so head - might be a pointer to the head node
