@@ -50,8 +50,8 @@ void DLLqueue::insertRear(int number)
 	}
 	else {
 		Node* newnode = new Node(number, rear, NULL);
-		front->SetPointer(newnode); //link to newnode in actual front
-		front = newnode; //change actual front
+		rear->SetPointer(newnode); //link to newnode in actual front
+		rear = newnode; //change actual front
 		}
 	counter++;
 }
@@ -76,7 +76,9 @@ int DLLqueue::dequeueFront()
 		front->SetPrev(nullptr);	//set prev od second node to null
 	}
 	counter--;
-	return temp->ReturnValue();
+	int buffer = temp->ReturnValue();
+	free(temp);
+	return buffer;
 }
 
 int DLLqueue::dequeueRear()
@@ -98,7 +100,9 @@ int DLLqueue::dequeueRear()
 		rear->SetPointer(nullptr);	//null the pointer to the last node
 	}
 	counter--;
-	return temp->ReturnValue();
+	int buffer = temp->ReturnValue();
+	free(temp);
+	return buffer;
 }
 
 

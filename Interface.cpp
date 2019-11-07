@@ -25,16 +25,12 @@ void Lab3Ex3()
 	//trzeba przejsc przez kazdy element aby przejsc cala kolejke
 
 	int cond = 13;	//zmienna do trzymania warunku
-	bool CzyKolejka = 0; //flaga informuje czy aktualnie przeszukuje kolejke
+	//bool CzyKolejka = 0; //flaga informuje czy aktualnie przeszukuje kolejke
 	int kolejkaSize = kolejka.ReturnSize(); //rozmiar kolejki
 
 	//petla przerywa sie gdy skonczy sie jeden ze zbiorow
-	while ((!stos.IsEmpty()) || (counter != kolejkaSize))  
+	while ((!stos.IsEmpty()) || (counter != kolejkaSize))
 	{
-		switch (CzyKolejka)
-		{
-		case 0:
-		{
 			if (!stos.IsEmpty())
 			{
 				int bufor = stos.Pop();
@@ -47,10 +43,8 @@ void Lab3Ex3()
 					stosPomocniczy.Push(bufor);
 				}
 			}
-			CzyKolejka = 1;
-		}break;
-		case 1: {
-			if ((counter != kolejkaSize))
+			
+			if (counter != kolejkaSize)
 			{
 				int bufor = kolejka.dequeue();
 				if (bufor == cond)
@@ -63,9 +57,6 @@ void Lab3Ex3()
 				}
 				counter++;
 			}
-			CzyKolejka = 0;
-		}break;
-		}
 	}
 
 	while (!stosPomocniczy.IsEmpty())
