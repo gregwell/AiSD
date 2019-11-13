@@ -4,41 +4,32 @@
 #include "List.hpp"
 #include "Queue.hpp"
 #include "Stack.hpp"
+#include "BTNode.hpp"
 
 using namespace std;
 
 int main()
 {
-	cout << " Array queue:" << endl;
-	ArrayQueue myarray;
-	myarray.enqueue(6);
-	myarray.enqueue(4);
-	myarray.enqueue(2);
-	myarray.enqueue(3);
-	myarray.enqueue(7);
-	cout << myarray.dequeue() << endl;
-	cout << myarray.dequeue() << endl;
+	//leaf nodes
 
-	cout << " Pointer queue:" << endl;
-	PointerQueue my;
-	my.enqueue(4);
-	my.enqueue(2);
-	my.enqueue(3);
-	cout << my.dequeue() << endl;
+	BTNode h = { NULL,NULL, 2 };
+	BTNode i = { NULL,NULL, 4 };
+	BTNode k = { NULL,NULL, 9 };
+	BTNode f = { NULL,NULL, 17 };
+	BTNode g = { NULL,NULL, 20 };
 
-	cout << " arr stack:" << endl;
-	ArrStack myarraystack;
-	myarraystack.Push(7);
-	myarraystack.Push(3); 
-	myarraystack.Push(1); 
-	cout << myarraystack.Pop() << endl;
+	// parent nodes
 
-	cout << " Pointer stack:" << endl;
-	PointerStack mypointerstack;
-	mypointerstack.push(3);
-	mypointerstack.push(4);
-	cout << mypointerstack.pop() << endl;
+	BTNode d = { &h, &i, 3 };
+	BTNode j = { &k, NULL, 13 };
+	BTNode c = { &f, &g, 18 };
+	BTNode e = { NULL, &j, 7 };
+	BTNode b = { &d, &e, 6 };
+	BTNode a = { &b, &c, 15 };
 
+
+	preorder(&a); 
+	cout << endl;
 
 	system("PAUSE");
 	return 0;

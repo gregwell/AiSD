@@ -116,6 +116,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BTNode.hpp" />
     <ClInclude Include="DLLqueue.hpp" />
     <ClInclude Include="Element.hpp" />
     <ClInclude Include="Interface.hpp" />
@@ -125,6 +126,7 @@
     <ClInclude Include="Stack.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BTNode.cpp" />
     <ClCompile Include="DLLqueue.cpp" />
     <ClCompile Include="Element.cpp" />
     <ClCompile Include="Interface.cpp" />
