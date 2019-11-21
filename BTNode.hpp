@@ -21,7 +21,7 @@ void preorder(BTNode * v);
 void inorder(BTNode * v);
 void postorder(BTNode * v);
 
-void preorder_stack(BTNode * v);
+//void preorder_stack(BTNode * v);
 
 //
 //BTNode * v, *S[7];     // stos
