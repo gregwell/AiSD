@@ -8,6 +8,7 @@ using namespace std;
 class BTNode
 {
 public:
+	BTNode * parent;
 	BTNode * left;
 	BTNode * right;
 

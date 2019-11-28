@@ -27,6 +27,9 @@ int main()
 	tree.Insert(root, 13);
 	tree.Insert(root, 9);
 
+	cout << "height drzewa" << tree.Height(root) << endl;
+	cout << "new lenght" << tree.NewLength(root, 6) << endl;
+
 	int min;
 	min = tree.MinBST(root)->data;
 	cout << "\nMinimalna wartosc w BST:" << min << endl;
@@ -44,8 +47,12 @@ int main()
 	tree.Delete(root, tree.MinBST(root)->data);
 	tree.Delete(root, tree.MinBST(root)->data);
 
+
 	cout << "\n\nDrzewo po usunieciu " << endl;
 	tree.Inorder(root);
+
+
+
 
 	system("PAUSE");
 	return 0;
