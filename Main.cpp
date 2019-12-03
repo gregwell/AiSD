@@ -6,6 +6,7 @@
 #include "Stack.hpp"
 #include "BTNode.hpp"
 #include "BST.hpp"
+#include "BubbleSort.hpp"
 
 using namespace std;
 
@@ -50,6 +51,20 @@ int main()
 
 	cout << "\n\nDrzewo po usunieciu " << endl;
 	tree.Inorder(root);
+
+
+	printf(" bubble sort: cockatail sort vefore and aftwer");
+	int arr[] = { 5, 1, 4, 2, 8, 0, 2 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	printArray(arr, n);
+	CocktailSort(arr, n);
+	printf("cocktail Sorted array :\n");
+	printArray(arr, n);
+
+	int arr2[] = { 5, 1, 4, 2, 8, 0, 2 };
+	bubbleSortCKM(arr2, n);
+	printf("CKM sorted array :\n");
+	printArray(arr, n);
 
 
 

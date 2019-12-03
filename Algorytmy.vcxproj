@@ -118,6 +118,7 @@
   <ItemGroup>
     <ClInclude Include="BST.hpp" />
     <ClInclude Include="BTNode.hpp" />
+    <ClInclude Include="BubbleSort.hpp" />
     <ClInclude Include="DLLqueue.hpp" />
     <ClInclude Include="Element.hpp" />
     <ClInclude Include="Interface.hpp" />
@@ -129,6 +130,7 @@
   <ItemGroup>
     <ClCompile Include="BST.cpp" />
     <ClCompile Include="BTNode.cpp" />
+    <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="DLLqueue.cpp" />
     <ClCompile Include="Element.cpp" />
     <ClCompile Include="Interface.cpp" />
