@@ -26,7 +26,7 @@ void bubbleSortCKM(int arr[], int n) {
 
 
 
-// Sorts arrar a[0..n-1] using Cocktail sort 
+// arr[0 do n-1]
 void CocktailSort(int a[], int n)
 {
 	bool swapped = true;
