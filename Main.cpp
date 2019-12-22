@@ -7,6 +7,10 @@
 #include "BTNode.hpp"
 #include "BST.hpp"
 #include "BubbleSort.hpp"
+#include "CombSort.hpp"
+#include "InsertSort.hpp"
+#include "SelectionSort.hpp"
+#include "ShellSort.hpp"
 
 using namespace std;
 
@@ -66,6 +70,29 @@ int main()
 	printf("CKM sorted array :\n");
 	printArray(arr, n);
 
+
+	//Comb Sort
+	int a[] = { 6, 2, 1, 9, 3, 6, 4, 3, 11, 51, 1, 95, 31, 2, 61, 22, 9, 65, 82, 4, 6, 2, 1, 9, 3, 6, 4, 3, 11, 51, 1, 95, 31, 2, 61, 22, 9, 65, 82, 4, 6, 2, 1, 9, 3, 6, 4, 3, 11, 51, 1, 95, 31, 2, 61, 22, 9, 65, 82, 4, 6, 2, 1, 9, 3, 6, 4, 3, 11, 51, 1, 95, 31, 2, 61, 22, 9, 65, 82, 4, 6, 2, 1, 9, 3, 6, 4, 3, 11, 51, 1, 95, 31, 2, 61, 22, 9, 65, 82, 4 };
+	int n = sizeof(a) / sizeof(a[0]);
+	int h;
+	Comb_Sort(a, n);
+	cout << "Comb Sorted array: \n";
+	printArray(a, n);
+	cin >> h;
+
+	int ar[] = { 51, 21, 2, 34, 1, 56, 12, 56, 89, 66, 54, 31, 12, 12, 15, 99, 81, 52, 56, 98 };
+	n = sizeof(ar) / sizeof(ar[0]);
+	insert_Sort(ar, n);
+	cout << "Insertion Sorted array: \n";
+	printArray(ar, n);
+	cin >> h;
+
+	int arr[] = { 83, 88, 1, 23, 15, 14, 25, 98, 92, 65, 55, 12, 5, 89, 37, 82, 74, 77, 2, 10 };
+	n = sizeof(arr) / sizeof(arr[0]);
+	selectionSort(arr, n);
+	cout << "Selection sorted array: \n";
+	printArray(arr, n);
+	cin >> h;
 
 
 

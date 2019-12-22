@@ -119,24 +119,32 @@
     <ClInclude Include="BST.hpp" />
     <ClInclude Include="BTNode.hpp" />
     <ClInclude Include="BubbleSort.hpp" />
+    <ClInclude Include="CombSort.hpp" />
     <ClInclude Include="DLLqueue.hpp" />
     <ClInclude Include="Element.hpp" />
+    <ClInclude Include="InsertSort.hpp" />
     <ClInclude Include="Interface.hpp" />
     <ClInclude Include="List.hpp" />
     <ClInclude Include="Odczyt.hpp" />
     <ClInclude Include="Queue.hpp" />
+    <ClInclude Include="SelectionSort.hpp" />
+    <ClInclude Include="ShellSort.hpp" />
     <ClInclude Include="Stack.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BST.cpp" />
     <ClCompile Include="BTNode.cpp" />
     <ClCompile Include="BubbleSort.cpp" />
+    <ClCompile Include="CombSort.cpp" />
     <ClCompile Include="DLLqueue.cpp" />
     <ClCompile Include="Element.cpp" />
+    <ClCompile Include="InsertSort.cpp" />
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="SelectionSort.cpp" />
+    <ClCompile Include="ShellSort.cpp" />
     <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

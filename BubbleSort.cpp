@@ -4,24 +4,29 @@
 
 
 //ciagla kontrola monotonicznosci
-void bubbleSortCKM(int arr[], int n) {
+void bubbleSortCKM(int arr[], int n) { //n-size of array
 
-	int i = -1;
+	int i = 0;
 	int j;
 	bool swapped;
+	int changes = 0;
+	int comparisions=0;
 
 	do {
 		swapped = false;
 
-		for ( ++i , j = n-1 ; j>i ; --j )
-
+		for (i++, j = n - 1; j > i; --j)
+			comparisions++;
 			if (arr[j] < arr[j - 1]) {
 
-				swap(arr[j], arr[j - 1]);
+				swap (arr[j], arr[j - 1]);
 				swapped = true;
+				changes++;
 
 			}
 	} while (swapped == true);
+
+	cout << changes << endl;
 }
 
 
@@ -32,14 +37,18 @@ void CocktailSort(int a[], int n)
 	bool swapped = true;
 	int start = 0;
 	int end = n - 1;
+	int changes = 0;
+	int comparisions = 0;
 
 	while (swapped) {
 		swapped = false;
 
 		for (int i = start; i < end; ++i) {
+			comparisions;
 			if (a[i] > a[i + 1]) {
 				swap(a[i], a[i + 1]);
 				swapped = true;
+				changes++;
 			}
 		}
 
@@ -63,6 +72,7 @@ void CocktailSort(int a[], int n)
 //the item in the left i sorted, so ove start one place to the right
 		++start;
 	}
+	cout << changes << endl;
 }
 
 void printArray(int a[], int n)
