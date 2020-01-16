@@ -1,25 +1,43 @@
 #pragma once
 #include <iostream>
-#include <utility>
-#include "Element.hpp"
+#include <string>
 
 using namespace std;
 
-class List {
+
+class SNode
+{
 public:
-	List();
-	~List();
+	int data;
+	SNode* next;
+	SNode() { data = 0; next = nullptr; };
+};
 
 
-	void Insert(int);
-
-	int SizeOf();
-
-
-
+class List
+{
 private:
-	Node * head;
-	Node*sentinel;
-	Node*current;
-	int counter = 0;
+	SNode* head;
+	SNode* tail;
+
+public:
+	List()
+	{
+		head = new SNode;
+		head->data = 0;
+		tail = NULL;
+	}
+
+	void add_front_item(int front);
+	void add_last_item(int n);
+	void print_list();
+	SNode* find(int item);
+	bool delete_from_list(int item);
+	SNode* find_last_element(int item);
+	void del(SNode* before_del);
+	SNode* search(int value);
+	SNode* gethead()
+	{
+		return head;
+	}
 };
