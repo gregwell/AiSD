@@ -1,7 +1,7 @@
 ﻿#include <iostream>
-#include "Odczyt.hpp"
+//#include "Odczyt.hpp"
 #include <vector>
-#include "List.hpp"
+#include "List.hpp"/*
 #include "Queue.hpp"
 #include "Stack.hpp"
 #include "BTNode.hpp"
@@ -12,7 +12,7 @@
 #include "SelectionSort.hpp"
 #include "ShellSort.hpp"
 #include "MergeSort.hpp"
-#include "HeapSort.hpp"
+#include "HeapSort.hpp"*/
 #include "Graphs.hpp"
 
 using namespace std;
@@ -118,38 +118,47 @@ int main()
 	//cout << "Sorted array is \n";
 	//printArray(arr, n);
 
-	Graph graph = Graph(9, 16);
-	graph.dodaj_krawedz(0, 1, 4);
-	graph.dodaj_krawedz(0, 4, 6);
-	graph.dodaj_krawedz(0, 5, 8);
-	graph.dodaj_krawedz(0, 6, 10);
-	graph.dodaj_krawedz(1, 2, 3);
-	graph.dodaj_krawedz(1, 3, 7);
-	graph.dodaj_krawedz(1, 5, 15);
-	graph.dodaj_krawedz(1, 7, 6);
-	graph.dodaj_krawedz(1, 8, 1);
-	graph.dodaj_krawedz(2, 4, 2);
-	graph.dodaj_krawedz(2, 6, 15);
-	graph.dodaj_krawedz(3, 5, 12);
-	graph.dodaj_krawedz(3, 8, 1);
-	graph.dodaj_krawedz(4, 7, 12);
-	graph.dodaj_krawedz(5, 8, 9);
-	graph.dodaj_krawedz(6, 7, 5);
+	//Graph graph = Graph(9, 16);
+	//graph.addEdge(0, 1, 4);
+	//graph.addEdge(0, 4, 6);
+	//graph.addEdge(0, 5, 8);
+	//graph.addEdge(0, 6, 10);
+	//graph.addEdge(1, 2, 3);
+	//graph.addEdge(1, 3, 7);
+	//graph.addEdge(1, 5, 15);
+	//graph.addEdge(1, 7, 6);
+	//graph.addEdge(1, 8, 1);
+	//graph.addEdge(2, 4, 2);
+	//graph.addEdge(2, 6, 15);
+	//graph.addEdge(3, 5, 12);
+	//graph.addEdge(3, 8, 1);
+	//graph.addEdge(4, 7, 12);
+	//graph.addEdge(5, 8, 9);
+	//graph.addEdge(6, 7, 5);
 
-	graph.printList();
-	graph.printIncidence();
-	graph.printAdj();
+	///*graph.printList();
+	//graph.printIncidence();
+	//graph.printAdj();*/
 
-	int x, y;
-	cout << "Check():\n";
-	cin >> x;
-	cin >> y;
+	//int x, y;
+	//cout << "Check():\n";
+	//cin >> x;
+	//cin >> y;
 
-	if (graph.check(x, y))
-		cout << "Poloczenie istnieje\n";
+	//if (graph.check(x, y))
+	//	cout << "Poloczenie istnieje\n";
 
-	else
-		cout << "Brak poloczenia\n";
+	//else
+	//	cout << "Brak poloczenia\n";
+
+
+	Graph graph;
+	graph.BFS(0);
+	cout << endl;
+	graph.DFS();
+
+
+
 
 	system("PAUSE");
 	return 0;

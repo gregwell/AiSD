@@ -17,8 +17,8 @@ public:
 class List
 {
 private:
-	SNode* head;
-	SNode* tail;
+	SNode* head; 
+	SNode* tail; 
 
 public:
 	List()
