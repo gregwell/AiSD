@@ -1,9 +1,7 @@
-# Algorithms and Data Structures
+# algorithms-and-data-structures
 
 - the repository contains all files for assignments from fall 2019 Algorithms and Data Structures course
-
 - all assignments solutions were written in C++
-
 - Implemented algorithms and data structures:
     - Queue
         - array queue
